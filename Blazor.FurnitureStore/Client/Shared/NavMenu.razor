@@ -1,20 +1,22 @@
 ﻿<div class="top-row pl-4 navbar navbar-dark">
-    <a class="navbar-brand" href="">Blazor.FurnitureStore</a>
+    <a class="navbar-brand" href="">
+        <img src="~/static/Recurso 3.png" width="180" />
+    </a>
     <button class="navbar-toggler" @onclick="ToggleNavMenu">
         <span class="navbar-toggler-icon"></span>
     </button>
 </div>
 
 <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
-    <ul class="nav flex-column">
+    <ul class="nav flex-column" style="margin-top:3.75rem">
         <li class="nav-item px-3">
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> Home
+                <span class="oi oi-home" aria-hidden="true"></span> Inico
             </NavLink>
         </li>
         <li class="nav-item px-3">
             <NavLink class="nav-link" href="orderDetails">
-                <span class="oi oi-plus" aria-hidden="true"></span> Add Order
+                <span class="oi oi-plus" aria-hidden="true"></span> Añadir Orden
             </NavLink>
         </li>      
     </ul>
@@ -23,7 +25,7 @@
 @code {
     private bool collapseNavMenu = true;
 
-    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+    private string NavMenuCssClass => collapseNavMenu ? "collapse pt-5 z-full" : null;
 
     private void ToggleNavMenu()
     {
