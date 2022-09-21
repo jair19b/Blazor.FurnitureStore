@@ -24,6 +24,23 @@
     background: #eee;
 }
 
+.text-bold {
+    font-weight: bold;
+}
+
+.linea {
+    display: flex;
+    justify-content: space-between;
+}
+
+.color-rojo {
+    color: #f17218;
+}
+
+.amarillo {
+    color: #f5d528;
+}
+
 .h-custom {
     height: calc(100% - 73px);
 }

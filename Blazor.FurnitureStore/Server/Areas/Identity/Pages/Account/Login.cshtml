@@ -6,31 +6,37 @@
 }
 
 <!-- <h1>@ViewData["Title"]</h1> -->
+
+
 <section class="vh-100">
     <div class="container-fluid h-custom">
         <div class="row d-flex justify-content-center align-items-center h-100">
+
             <div class="col-md-9 col-lg-6 col-xl-5">
                 <img src="@Url.Content("~/static/logo.svg")"
                      class="img-fluid" alt="Sample image">
             </div>
+
             <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
                 <form id="account" method="post">
 
-                    <h1>Iniciar Session</h1>
+                    <h1>Bienvenido a tu Sesión</h1><br /><br />
+
+            
 
                     <!-- Email input -->
                     <div class="form-outline mb-4">
+                        <label class="form-label text-bold" asp-for="Input.Email">Correo Electronico:</label>
                         <input asp-for="Input.Email" class="form-control form-control-lg"
-                               placeholder="Enter a valid email address" />
-                        <label class="form-label" asp-for="Input.Email">Email address</label>
+                               placeholder="Ingrese su correo electrónico" />
                         <span asp-validation-for="Input.Email" class="text-danger"></span>
                     </div>
 
                     <!-- Password input -->
                     <div class="form-outline mb-3">
+                        <label class="form-label text-bold" asp-for="Input.Password">Contraseña:</label>
                         <input asp-for="Input.Password" class="form-control form-control-lg"
-                               placeholder="Enter password" />
-                        <label class="form-label" asp-for="Input.Password">Password</label>
+                               placeholder="Ingrese su contraseña" />
                         <span asp-validation-for="Input.Password" class="text-danger"></span>
                     </div>
 
@@ -39,23 +45,24 @@
                         <div class="form-check mb-0">
                             <input class="form-check-input me-2" asp-for="Input.RememberMe" />
                             <label class="form-check-label" asp-for="Input.RememberMe">
-                                @Html.DisplayNameFor(m => m.Input.RememberMe)
+                                <!-- @Html.DisplayNameFor(m => m.Input.RememberMe) --> 
+                                Recuerdame
                             </label>
                         </div>
-                        <a class="text-body" id="forgot-password" asp-page="./ForgotPassword">Forgot password?</a>
+                        <a class="text-body" id="forgot-password" asp-page="./ForgotPassword">Olvidé mi contraseña</a>
                     </div>
 
                     <div class="text-center text-lg-start mt-4 pt-2">
                         <button type="submit" class="btn btn-primary btn-lg"
                                 style="padding-left: 2.5rem; padding-right: 2.5rem;">
-                            Login
+                            Iniciar
                         </button>
-                        <p class="small fw-bold mt-2 pt-1 mb-0">
-                            Don't have an account? 
-                            <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl" class="link-danger">Register</a>
+                        <p class="small fw-bold mt-3 pt-1 mb-0">
+                            ¿No tienes una cuenta?
+                            <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl" class="color-rojo">Crea una aqui</a>
                         </p>
                         <p>
-                            <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Resend email confirmation</a>
+                            <a id="resend-confirmation" asp-page="./ResendEmailConfirmation" class="amarillo">Enviar mensaje de confirmación</a>
                         </p>
                     </div>
 
